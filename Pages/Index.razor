@@ -1,0 +1,30 @@
+﻿@page "/"
+@inject ReadSlovnik.Services.DictionaryService Dict
+
+<h3>Načítanie slovníka slovnik.txt</h3>
+
+@if (words is null)
+{
+    <p>Načítavam slovník...</p>
+}
+else
+{
+    <p><b>Počet slov:</b> @words.Length</p>
+
+    <h4>Prvých 20 slov:</h4>
+    <ul>
+        @foreach (var w in words.Take(20))
+        {
+            <li>@w</li>
+        }
+    </ul>
+}
+
+@code {
+    string[]? words;
+
+    protected override async Task OnInitializedAsync()
+    {
+        words = await Dict.GetWordsAsync();
+    }
+}
