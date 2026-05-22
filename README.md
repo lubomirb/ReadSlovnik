@@ -1,0 +1,1 @@
+# SlovnikSK slovnik pre hru scrabble
