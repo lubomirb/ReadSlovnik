@@ -29,7 +29,7 @@ jobs:
       run: |
         mkdir public
         cp -r build/wwwroot/* public/
-        cp master.slovnik.txt public/
+        cp slovnik.txt public/
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
