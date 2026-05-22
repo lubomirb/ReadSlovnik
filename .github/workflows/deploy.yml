@@ -2,7 +2,7 @@ name: Build and Deploy Blazor WASM + Slovnik
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 permissions:
   contents: write
@@ -29,7 +29,7 @@ jobs:
       run: |
         mkdir public
         cp -r build/wwwroot/* public/
-        cp main.slovnik.txt public/
+        cp master.slovnik.txt public/
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
